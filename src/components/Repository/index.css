@@ -1,0 +1,180 @@
+.repositoryContainer {
+  display: flex;
+  background-color: #0f172a;
+  min-height: 90vh;
+  width: 100%;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .repositoryContainer {
+    justify-content: center;
+  }
+}
+.showHeader {
+  display: flex;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.insideRepoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  min-height: 80vh;
+}
+
+.repoHeading {
+  color: white;
+}
+
+.cardHolder {
+  width: 90%;
+}
+@media screen and (min-width: 768px) {
+  .cardHolder {
+    width: 100%;
+  }
+}
+
+.para {
+  font-family: HK Grotesk;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .para {
+    font-size: 16px;
+  }
+}
+
+.pink {
+  background-color: #c026d329;
+  color: #c026d329;
+}
+
+.green {
+  background-color: #22c55e29;
+  color: #22c55e29;
+}
+.blue {
+  background-color: #0284c729;
+  color: #0284c729;
+}
+.maroon {
+  background-color: #db277729;
+  color: #db277729;
+}
+.yellow {
+  background-color: #f59e0b29;
+  color: #f59e0b29;
+}
+
+.individualRepoItem {
+  list-style-type: none;
+  background: Light / blue / 500;
+  border-radius: 20px;
+  min-height: 20vh;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid yellow;
+}
+
+.languagesContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.style {
+  height: 35px;
+  width: 100px;
+  color: wheat;
+  list-style-type: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+@media screen and (max-width: 767px) {
+  .style {
+    margin-top: 10px;
+  }
+}
+
+.emptyStringContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noDataFoundImage {
+  width: 206.91px;
+  height: 226px;
+}
+@media screen and (min-width: 768px) {
+  .noDataFoundImage {
+    width: 401px;
+    height: 438px;
+    top: 210px;
+    left: 520px;
+  }
+}
+
+.noDataHeading {
+  font-family: HK Grotesk;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+}
+
+.gitPara {
+  font-family: HK Grotesk;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #f8fafc;
+}
+
+.goToHomeButton {
+  width: 135px;
+  height: 48px;
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+}
+.stargazersCountNumber {
+  font-family: HK Grotesk;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+}
+
+.starsAndForksCount {
+  display: flex;
+  align-items: center;
+}
+
+.forksContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
