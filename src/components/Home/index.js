@@ -61,7 +61,7 @@ class Home extends Component {
   getGitHubData = async name => {
     if (name !== '') {
       this.setState({toDisplayProfilePage: true})
-      const apiUrl = `https://apis2.ccbp.in/gpv/profile-details/${name}?api_key=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`
+      const apiUrl = `https://apis2.ccbp.in/gpv/profile-details/${name}?api_key=`
       const response = await fetch(apiUrl)
       if (response.ok === true) {
         const data = await response.json()

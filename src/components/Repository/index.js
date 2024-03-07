@@ -28,7 +28,7 @@ class Repository extends Component {
         <ActiveTab.Consumer>
             {value => {
                 const {username} = value
-                 const repoUrl = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=ghp_KJN6GPS25NoofSDvccGmrPUoK8QMij3rt`
+                 const repoUrl = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=`
                 const response = await fetch(repoUrl)
                 if (response.ok === true) {
                 const data = await response.json()
