@@ -4,6 +4,7 @@ import Counter from './components/Counter'
 import ActiveTab from './context/ActiveTab'
 import Home from './components/Home'
 import Repository from './components/Repository'
+import Analysis from './components/Analysis'
 import './App.css'
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/repositories" component={Repository} />
+          <Route exact path="/analysis" component={Analysis} />
         </Switch>
       </ActiveTab.Provider>
     )

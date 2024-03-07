@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner'
 import {RiStarLine} from 'react-icons/ri'
 import {GoRepoForked} from 'react-icons/go'
 import ActiveTab from '../../context/ActiveTab'
+import FailureContainer from '../FailureContainer'
 import Header from '../Header'
 
 import './index.css'
@@ -23,27 +24,35 @@ class Repository extends Component {
 
   renderRepoPage = async () => {
     this.setState({apiStatus: apiConstants.loading})
-
-    const repoUrl = `https://apis2.ccbp.in/gpv/repos/kentcdodds?api_key=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`
-    const response = await fetch(repoUrl)
-
-    if (response.ok === true) {
-      const data = await response.json()
-      const convertCase = data.map(eachItem => ({
-        id: eachItem.id,
-        avatarUrl: eachItem.avatar_url,
-        forksCount: eachItem.forks_count,
-        stargazersCount: eachItem.stargazers_count,
-        languages: eachItem.languages.map(eachLanguage => ({
-          name: eachLanguage.name,
-          value: eachLanguage.value,
-        })),
-      }))
-      this.setState({repoItem: convertCase, apiStatus: apiConstants.success})
-    }
+    return (
+        <ActiveTab.Consumer>
+            {value => {
+                const {username} = value
+                 const repoUrl = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=ghp_KJN6GPS25NoofSDvccGmrPUoK8QMij3rt`
+                const response = await fetch(repoUrl)
+                if (response.ok === true) {
+                const data = await response.json()
+                const convertCase = data.map(eachItem => ({
+                    id: eachItem.id,
+                    avatarUrl: eachItem.avatar_url,
+                    forksCount: eachItem.forks_count,
+                    stargazersCount: eachItem.stargazers_count,
+                    languages: eachItem.languages.map(eachLanguage => ({
+                    name: eachLanguage.name,
+                    value: eachLanguage.value,
+                    })),
+                }))
+                this.setState({repoItem: convertCase, apiStatus: apiConstants.success})
+                } else {
+                this.setState({apiStatus: apiConstants.failure})
+                }
+            }}
+        </ActiveTab.Consumer>
+    )
+    
   }
 
-  renderSuccess = () => {
+  renderResponseList = () => {
     const {repoItem} = this.state
 
     return (
@@ -87,6 +96,31 @@ class Repository extends Component {
     )
   }
 
+  renderZeroRepos = () => (
+    <div className="noReposContainer">
+      <img
+        src="https://res.cloudinary.com/dowjvitxs/image/upload/v1709723769/Layer_3_1_fjwpct.png"
+        alt="no repositories"
+      />
+      <h1 className="noRepoHeading">No Repositories Found</h1>
+    </div>
+  )
+
+  renderSuccess = () => {
+    const {repoItem} = this.state
+    return (
+      <div>
+        {repoItem === 0 ? this.renderZeroRepos() : this.renderResponseList()}
+      </div>
+    )
+  }
+
+  onClickTryAgain = () => this.renderRepoPage()
+
+  renderFailure = () => (
+    <FailureContainer onClickTryAgain={this.onClickTryAgain} />
+  )
+
   renderLoading = () => (
     <div className="loader-container" data-testid="loader">
       <Loader type="TailSpin" color="#3B82F6" height={50} width={50} />
@@ -98,6 +132,8 @@ class Repository extends Component {
     switch (apiStatus) {
       case apiConstants.success:
         return this.renderSuccess()
+      case apiConstants.failure:
+        return this.renderFailure()
       case apiConstants.loading:
         return this.renderLoading()
       default:

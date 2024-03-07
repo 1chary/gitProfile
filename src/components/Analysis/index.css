@@ -1,0 +1,64 @@
+.noAnalysisContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.noDataAnalysisImage {
+  width: 551px;
+  height: 409px;
+  top: 224px;
+  left: 445px;
+}
+@media screen and (max-width: 767px) {
+  .noDataAnalysisImage {
+    width: 296px;
+    height: 220px;
+    top: 160px;
+    left: 32px;
+  }
+}
+
+.noAnalysisHeading {
+  font-family: HK Grotesk;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffff;
+}
+@media screen and (min-width: 768px) {
+  .noAnalysisHeading {
+    font-family: HK Grotesk;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #ffff;
+  }
+}
+
+.insideAnalysisContainer {
+  min-height: 90vh;
+  width: 90%;
+  border: 1px solid yellow;
+}
+.analysisHeading {
+  font-family: HK Grotesk;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffff;
+}
+@media screen and (max-width: 767px) {
+  .analysisHeading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

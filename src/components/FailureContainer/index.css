@@ -1,0 +1,43 @@
+.failureContainer {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.retryButton {
+  background-color: #3b82f6;
+  height: 50px;
+  width: 90px;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.failureHeading {
+  font-family: HK Grotesk;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .failureCatImage {
+    width: 296px;
+    height: 145px;
+    top: 176px;
+    left: 32px;
+  }
+  .failureHeading {
+    font-family: HK Grotesk;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
