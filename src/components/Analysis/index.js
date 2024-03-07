@@ -61,7 +61,7 @@ class Analysis extends Component {
 
   renderAnalysisData = async () => {
     this.setState({apiStatus: apiConstants.loading})
-    const analysisUrl = `https://apis2.ccbp.in/gpv/profile-summary/kentcdodds?api_key=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`
+    const analysisUrl = `https://apis2.ccbp.in/gpv/profile-summary/kentcdodds?api_key=`
     const response = await fetch(analysisUrl)
     if (response.ok === true) {
       const data = await response.json()
