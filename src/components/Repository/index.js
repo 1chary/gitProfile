@@ -26,7 +26,7 @@ class Repository extends Component {
     this.setState({apiStatus: apiConstants.loading})
     return (
         <ActiveTab.Consumer>
-            {value => {
+            {async value => {
                 const {username} = value
                  const repoUrl = `https://apis2.ccbp.in/gpv/repos/${username}?api_key=`
                 const response = await fetch(repoUrl)
